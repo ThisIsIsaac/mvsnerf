@@ -90,14 +90,14 @@ class MVSSystem(LightningModule):
     def train_dataloader(self):
         return DataLoader(self.train_dataset,
                           shuffle=True,
-                          num_workers=8,
+                          num_workers=0, #! Fix me to 8
                           batch_size=1,
                           pin_memory=True)
 
     def val_dataloader(self):
         return DataLoader(self.val_dataset,
                           shuffle=False,
-                          num_workers=1,
+                          num_workers=0, #! Fix me to 1
                           batch_size=1,
                           pin_memory=True)
 
